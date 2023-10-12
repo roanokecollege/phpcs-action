@@ -34,7 +34,7 @@ RUN wget -O - -q https://github.com/Automattic/VIP-Coding-Standards/archive/${RU
 RUN wget -O - -q https://github.com/sirbrillig/phpcs-variable-analysis/archive/v${RULESET_PHPCS_VARIABLE_ANALYSIS_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash --wildcards '*/VariableAnalysis*'
 RUN wget -O - -q https://github.com/PHPCompatibility/PHPCompatibility/archive/${RULESET_PHP_COMPATIBILITY_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash --wildcards '*/PHPCompatibility*'
 RUN wget -O - -q https://github.com/PHPCompatibility/PHPCompatibilityWP/archive/${RULESET_PHP_COMPATIBILITY_WP_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash --wildcards '*/PHPCompatibility*'
-RUN wget -O - -q https://github.com/chssmith/SnakeStandard/archive/refs/tags/v${RULESET_RC_SNAKESTANDARD_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash
+RUN wget -O - -q https://github.com/chssmith/SnakeStandard/archive/refs/tags/v${RULESET_RC_SNAKESTANDARD_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash SnakeStandard
 
 COPY entrypoint.sh /entrypoint.sh
 
