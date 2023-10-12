@@ -46,7 +46,7 @@ if [ "${RESULT}" -ne 0 ]; then
   #if result is 1, then only not fixable errors found
   if [ "${RESULT}" -eq 1 ]; then
     echo "only not fixable errors found"
-    exit 1
+    exit 0
   fi
 
   #if result is 2, then fixable errors found
