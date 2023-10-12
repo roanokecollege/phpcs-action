@@ -13,7 +13,8 @@ ENV RULESET_WP_CODING_STANDARDS_VERSION=2.3.0 \
   RULESET_VIP_CODING_STANDARDS_VERSION=2.3.2 \
   RULESET_PHPCS_VARIABLE_ANALYSIS_VERSION=2.11.0 \
   RULESET_PHP_COMPATIBILITY_VERSION=9.3.5 \
-  RULESET_PHP_COMPATIBILITY_WP_VERSION=2.1.1
+  RULESET_PHP_COMPATIBILITY_WP_VERSION=2.1.1\
+  RULESET_RC_SNAKESTANDARD_VERSION=0.0.1
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
@@ -33,6 +34,7 @@ RUN wget -O - -q https://github.com/Automattic/VIP-Coding-Standards/archive/${RU
 RUN wget -O - -q https://github.com/sirbrillig/phpcs-variable-analysis/archive/v${RULESET_PHPCS_VARIABLE_ANALYSIS_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash --wildcards '*/VariableAnalysis*'
 RUN wget -O - -q https://github.com/PHPCompatibility/PHPCompatibility/archive/${RULESET_PHP_COMPATIBILITY_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash --wildcards '*/PHPCompatibility*'
 RUN wget -O - -q https://github.com/PHPCompatibility/PHPCompatibilityWP/archive/${RULESET_PHP_COMPATIBILITY_WP_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash --wildcards '*/PHPCompatibility*'
+RUN wget -O - -q https://github.com/roanokecollege/SnakeStandard/archive/${RULESET_RC_SNAKESTANDARD_VERSION}.tar.gz | tar zxv -C /tmp/rulesets --strip-components 1 --wildcards-match-slash --wildcards '*/PHPCompatibility*'
 
 COPY entrypoint.sh /entrypoint.sh
 
