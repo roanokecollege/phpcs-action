@@ -6,6 +6,7 @@ if [ -n "${GITHUB_WORKSPACE}" ]; then
 fi
 
 /usr/local/bin/phpcs.phar --config-set installed_paths /tmp/rulesets
+/usr/local/bin/phpcs.phar --config-set show_warnings 0
 
 run_phpcs() {
   if [ "${INPUT_USE_DEFAULT_CONFIGURATION_FILE}" = true ]; then
