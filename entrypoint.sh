@@ -6,15 +6,14 @@ if [ -n "${GITHUB_WORKSPACE}" ]; then
 fi
 
 /usr/local/bin/phpcs.phar --config-set installed_paths /tmp/rulesets
-/usr/local/bin/phpcs.phar --config-set show_warnings 0
 
 run_phpcs() {
   if [ "${INPUT_USE_DEFAULT_CONFIGURATION_FILE}" = true ]; then
-    /usr/local/bin/phpcs.phar \
+    /usr/local/bin/phpcs.phar -n \
       --report-checkstyle \
       "${INPUT_PHPCS_ARGS:-\.}"
   else
-    /usr/local/bin/phpcs.phar \
+    /usr/local/bin/phpcs.phar -n \
       --report-checkstyle \
       --standard="${INPUT_PHPCS_STANDARD}" \
       "${INPUT_PHPCS_ARGS:-\.}"
